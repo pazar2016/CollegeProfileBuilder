@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let myCell = myTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         myCell.textLabel!.text = colleges[indexPath.row].name
+        myCell.detailTextLabel!.text = colleges[indexPath.row].location
         //Location needs to be set to subtitle
         return myCell
     }
