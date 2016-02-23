@@ -37,6 +37,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return colleges.count
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if editingStyle == .Delete
+        {
+            colleges.removeAtIndex(indexPath.row)
+            myTableView.reloadData()
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         let detailView = segue.destinationViewController as! DetailedViewController
