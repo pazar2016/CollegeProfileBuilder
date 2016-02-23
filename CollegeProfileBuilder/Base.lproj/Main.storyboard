@@ -64,7 +64,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="vXY-If-HX2">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="JrQ-PD-9kg"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dZY-2y-H2s"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dZY-2y-H2s">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="bFO-FT-s7X"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="Nqj-Ok-Wsm" id="qoz-Cn-G0L"/>

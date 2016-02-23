@@ -44,6 +44,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         detailView.university = colleges[selectedRow]
         
     }
+    @IBAction func addButtonTapped(sender: UIBarButtonItem)
+    {
+        let myAlert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
+        myAlert.addTextFieldWithConfigurationHandler{(nameTextfield) -> Void in
+            nameTextfield.placeholder = "Add College Name"
+        }
+        myAlert.addTextFieldWithConfigurationHandler{(locationTextfield) -> Void in
+            locationTextfield.placeholder = "Add College Location"
+        }
+        myAlert.addTextFieldWithConfigurationHandler{(numberOfStudentsTextfield) -> Void in
+            numberOfStudentsTextfield.placeholder = "Add Number of Students"
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        myAlert.addAction(cancelAction)
+        let addAction = UIAlertAction(title: "Add", style: .Default) { (addAction) -> Void in
+            let collegeTF = myAlert.textFields![0] as UITextField
+            let locationTF = myAlert.textFields![1] as UITextField
+            let numberOfStudentsTF = myAlert.textFields![2] as UITextField
+            self.colleges.append(College(Name: collegeTF.text!, Location: locationTF.text!, NumberOfStudents: Int(numberOfStudentsTF.text!)!))
+            self.myTableView.reloadData()
+        }
+        myAlert.addAction(addAction)
+        self.presentViewController(myAlert, animated: true, completion: nil)
+    }
+    
+    
 
 }
 
