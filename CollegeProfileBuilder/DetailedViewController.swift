@@ -14,6 +14,7 @@ class DetailedViewController: UIViewController
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var locationTF: UITextField!
     @IBOutlet weak var numberOfStudentsTF: UITextField!
+    
     //TableView variable?
     
     var university : College!
@@ -28,6 +29,12 @@ class DetailedViewController: UIViewController
         
 
 
+    }
+    @IBAction func saveButtonTapped(sender: UIButton)
+    {
+        university.name = nameTF.text!
+        university.location = locationTF.text!
+        university.numberOfStudents = Int(numberOfStudentsTF.text!)!
     }
 
 }

@@ -79,6 +79,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.presentViewController(myAlert, animated: true, completion: nil)
     }
     
+    override func viewWillAppear(animated: Bool)
+    {
+        myTableView.reloadData()
+    }
     @IBAction func editButtonTapped(sender: UIBarButtonItem)
     {
         if editButton.tag == 0

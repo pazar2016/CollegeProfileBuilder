@@ -140,6 +140,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44b-xP-vMK">
+                                <rect key="frame" x="258" y="534" width="65" height="31"/>
+                                <animations/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Qiq-k3-nK9" eventType="touchUpInside" id="Cfp-gt-tn8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,7 +156,9 @@
                             <constraint firstItem="elb-gz-ESQ" firstAttribute="centerX" secondItem="hBU-Xh-Qp2" secondAttribute="centerX" id="6e1-Mg-vk6"/>
                             <constraint firstItem="rWz-wa-bkc" firstAttribute="centerX" secondItem="hBU-Xh-Qp2" secondAttribute="centerX" id="7L3-2D-izK"/>
                             <constraint firstItem="Vva-G3-6VF" firstAttribute="top" secondItem="fJx-d4-BHq" secondAttribute="bottom" constant="10" id="Fee-1P-oKh"/>
+                            <constraint firstItem="rbS-4Y-pFo" firstAttribute="top" secondItem="44b-xP-vMK" secondAttribute="bottom" constant="35" id="Ncy-om-TAL"/>
                             <constraint firstItem="elb-gz-ESQ" firstAttribute="top" secondItem="fYt-5L-5hJ" secondAttribute="bottom" constant="15" id="O8e-XB-Acg"/>
+                            <constraint firstItem="44b-xP-vMK" firstAttribute="centerX" secondItem="hBU-Xh-Qp2" secondAttribute="centerX" id="OLf-Ph-Cfz"/>
                             <constraint firstItem="rWz-wa-bkc" firstAttribute="top" secondItem="elb-gz-ESQ" secondAttribute="bottom" constant="15" id="PhA-ri-hC1"/>
                             <constraint firstItem="fYt-5L-5hJ" firstAttribute="top" secondItem="Vva-G3-6VF" secondAttribute="bottom" constant="8" id="X1Q-yQ-OJ2"/>
                             <constraint firstItem="fYt-5L-5hJ" firstAttribute="centerX" secondItem="hBU-Xh-Qp2" secondAttribute="centerX" id="fhH-iS-n7h"/>
