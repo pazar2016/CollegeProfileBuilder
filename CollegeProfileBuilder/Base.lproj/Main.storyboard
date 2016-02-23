@@ -70,7 +70,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vXY-If-HX2">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="JrQ-PD-9kg"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="JrQ-PD-9kg">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="5Bg-TH-Ehb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dZY-2y-H2s">
                             <connections>
                                 <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="bFO-FT-s7X"/>
@@ -78,6 +82,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="JrQ-PD-9kg" id="a7F-5L-JiT"/>
                         <outlet property="myTableView" destination="Nqj-Ok-Wsm" id="qoz-Cn-G0L"/>
                     </connections>
                 </viewController>

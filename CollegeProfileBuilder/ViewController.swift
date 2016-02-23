@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var myTableView: UITableView!
     var colleges : [College] = []
 
@@ -78,7 +79,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.presentViewController(myAlert, animated: true, completion: nil)
     }
     
+    @IBAction func editButtonTapped(sender: UIBarButtonItem)
+    {
+        if editButton.tag == 0
+        {
+            myTableView.editing = true
+            editButton.tag = 1
+        }
+        else
+        {
+            myTableView.editing = false
+            editButton.tag = 0
+        }
+    }
     
-
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
+    {
+        let universities = colleges[sourceIndexPath.row]
+        colleges.removeAtIndex(sourceIndexPath.row)
+        colleges.insert(universities, atIndex: destinationIndexPath.row)
+    }
+    
 }
 
